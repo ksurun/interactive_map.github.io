@@ -1,109 +1,254 @@
-*{
-    margin: 0;
-    padding: 0;
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-html, body{
-    height: 100%;
-    margin: 0;
+.footer {
+  margin-top: auto;
 }
 
-.wrap-content{
-    width: 1200px;
-    padding: 20px;
-    min-height: 100%;
-    margin: 0 auto -50px;
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
-    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+.hamburger {
+  display: none;
+  cursor: pointer;
 }
 
-.wrap-content_full{
-    padding: 20px;
-    min-height: 100%;
-    margin: 0 auto -50px;
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: white;
 }
 
-.fullscreen{
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+  background-color: green;
+}
+.main-menu__navigation {
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 100px;
+  list-style-type: none;
+}
+.main-menu__link {
+  color: aliceblue;
+}
+.main-menu__link:hover {
+  color: blue;
+}
+
+.content {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.content__title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content__text {
+  font-size: 28px;
+  text-align: justify;
+}
+
+.reviews {
+  padding-bottom: 50px;
+}
+.reviews__title {
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+.reviews__button-reset, .reviews__button-submit {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+.reviews__name {
+  height: 40px;
+  width: 300px;
+  font-size: 18px;
+}
+.reviews__textarea {
+  margin-top: 20px;
+  font-size: 18px;
+  width: 720px;
+  resize: none;
+}
+
+.map {
+  width: 100%;
+  height: calc(100vh - 110px);
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  background-color: green;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 450px);
+    padding-right: calc(50% - 450px);
+  }
+  .reviews__textarea {
+    width: 630px;
+  }
+}
+@media (max-width: 768px) {
+  .center {
+    padding-left: calc(50% - 300px);
+    padding-right: calc(50% - 300px);
+  }
+  .main-menu__navigation {
+    font-size: 20px;
+    gap: 40px;
+  }
+  .content {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .content__title {
+    font-size: 30px;
+  }
+  .content__text {
+    font-size: 20px;
+  }
+  .reviews__title {
+    font-size: 20px;
+  }
+  .reviews__button-reset, .reviews__button-submit {
+    font-size: 16px;
+  }
+  .reviews__name {
+    font-size: 16px;
+  }
+  .reviews__textarea {
+    font-size: 16px;
+    width: 480px;
+  }
+  .map {
+    height: calc(100vh - 150px);
+  }
+}
+@media (max-width: 760px) {
+  .bar {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: rotate(45deg) translateY(11.5px);
+        -ms-transform: rotate(45deg) translateY(11.5px);
+            transform: rotate(45deg) translateY(11.5px);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translateY(-11.5px);
+        -ms-transform: rotate(-45deg) translateY(-11.5px);
+            transform: rotate(-45deg) translateY(-11.5px);
+  }
+  .main-menu__navigation {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    gap: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
-    height: 100%;
-}
-
-a{
-    text-decoration: none;
-}
-
-.wrap-main-menu{
-    display: flex;
-    width: 100%;
-    height: 80px;
-    background-color: green;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    font-size: 24px;
-}
-
-.title{
     text-align: center;
-    margin-bottom: 20px;
+    background: green;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .main-menu__navigation.active {
+    right: 0;
+  }
 }
-
-.wrap-main-menu a{
-    color: aliceblue;
+@media (max-width: 425px) {
+  .center {
+    padding-left: calc(50% - 197.5px);
+    padding-right: calc(50% - 197.5px);
+  }
+  .reviews__textarea {
+    width: 395px;
+  }
 }
-
-.wrap-main-menu a:hover{
-    color: blue;
-}
-
-.content{
-    margin: 0 auto;
-    width: 1200px;
-}
-
-.content h1{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    font-size: 40px;
-}
-
-.content p{
+@media (max-width: 375px) {
+  .center {
+    padding-left: calc(50% - 177.5px);
+    padding-right: calc(50% - 177.5px);
+  }
+  .content__title {
     font-size: 28px;
-    text-align: justify;
-}
-
-.footer, .push{
-    height: 50px;
-    background-color: green;
-}
-
-.footer-wrap{
-    margin: 0 auto;
-    width: 1200px;
-}
-
-.reviews{
-    padding-top: 50px;
-}
-
-#name{
-    height: 40px;
-    width: 300px;
+  }
+  .content__text {
     font-size: 18px;
+  }
+  .reviews__textarea {
+    width: 355px;
+  }
+  .reviews__button-reset, .reviews__button-submit {
+    padding: 5px 10px;
+  }
 }
-
-.form{
-    padding-top: 30px;
-}
-
-.textarea{
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.form button{
-    font-size: 18px;
-    padding: 10px 20px;
+@media (max-width: 320px) {
+  .center {
+    padding-left: calc(50% - 145px);
+    padding-right: calc(50% - 145px);
+  }
+  .reviews__textarea {
+    width: 290px;
+  }
+  .reviews__name {
+    width: 290px;
+  }
+  .reviews__button-reset, .reviews__button-submit {
+    margin-bottom: 10px;
+  }
 }
